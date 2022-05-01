@@ -20,7 +20,7 @@ public class Main {
             arr[i]=sc.nextInt();
         }
 
-        for(int i=0; i<arr.length ;i++){
+        for(int i=1; i<arr.length ;i++){
             if(max<arr[i]){
               max =arr[i];
               cnt=i;
