@@ -6,26 +6,33 @@ import java.util.StringTokenizer;
 public class memo {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st;
-        int N, A;
-        int[] arr;
 
-        st = new StringTokenizer(br.readLine(), " ");
-        N = Integer.parseInt(st.nextToken());
-        A = Integer.parseInt(st.nextToken());
-        arr = new int[N];
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st;
+
+        int N = Integer.parseInt(br.readLine());
+        int[] arr = new int[N];
+        st = new StringTokenizer(br.readLine());
 
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
-            if (A > arr[i]) {
-                bw.write(arr[i] + " ");
+        }
+
+        int max = arr[0];
+        int min = arr[0];
+
+        for (int i = 0; i < N; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            } else if(arr[i] < min) {
+                min = arr[i];
             }
         }
 
-        br.close();
-        bw.flush();
-        bw.close();
+
+        sb.append(min).append(" ").append(max);
+        System.out.println(sb);
+
     }
 }
