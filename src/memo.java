@@ -1,5 +1,6 @@
 
 import java.io.*;
+import java.nio.Buffer;
 import java.util.StringTokenizer;
 
 
@@ -7,32 +8,28 @@ public class memo {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        StringTokenizer st;
+       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int N = Integer.parseInt(br.readLine());
-        int[] arr = new int[N];
-        st = new StringTokenizer(br.readLine());
+       int [] arr =new int [10];
+       int sum =Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine());
 
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
+       while(sum!=0){
+           arr[sum %10]++;
+           sum/=10;
+       }
 
-        int max = arr[0];
-        int min = arr[0];
+       for (int i= 0; i<10; i++){
+           bw.write(arr[i]+"\n");
+       }
 
-        for (int i = 0; i < N; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            } else if(arr[i] < min) {
-                min = arr[i];
-            }
-        }
+       bw.flush();
 
 
-        sb.append(min).append(" ").append(max);
-        System.out.println(sb);
+
+
+
+
 
     }
 }
