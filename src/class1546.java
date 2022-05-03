@@ -5,40 +5,21 @@ public class class1546 {
 
         Scanner sc = new Scanner(System.in);
 
-        int avg = sc.nextInt();
-        int[] arr = new int[avg];
-        int max=0;
+        double[] arr = new double[sc.nextInt()];
+        double max=0;
+        double sol=0;
 
-        int sol=0;
-        int temp=0;
-        double c=0;
-        int a=0;
 
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
-
-        }
-        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextDouble();
             if(arr[i]>max){
-                max= arr[i];
+                max=  arr[i];
             }
         }
-        System.out.println(max);
-        for (int i = 0; i < arr.length; i++) {
-
-        }
         for(int i=0;i<arr.length;i++){
-
             sol+=(arr[i]/max)*100;
-
         }
-        System.out.println(sol);
-
-        temp= sol/3;
-
-
-        System.out.println(temp);
-
+        System.out.println(sol/arr.length);
 
     }
 }
