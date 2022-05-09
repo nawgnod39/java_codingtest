@@ -22,7 +22,7 @@ public class class4344 {
                 sum += val;	// 성적 누적 합
             }
 
-            double mean = (sum / N) ;
+            double mean = (sum / N) ;// 평균
             double count = 0; // 평균 넘는 학생 수 변수
 
             // 평균 넘는 학생 비율
@@ -31,6 +31,8 @@ public class class4344 {
                     count++;
                 }
             }
+            //전체값으로부터 특정값은 n%인지
+            //-특정값 / 전체값 * 100 = n%
             System.out.printf("%.3f%%\n",(count/N)*100);
         }
         sc.close();
