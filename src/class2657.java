@@ -3,22 +3,24 @@ import java.util.Scanner;
 public class class2657 {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int T = in.nextInt();
-        for(int i = 0; i < T; i++) {
+        int num= sc.nextInt();// TEST CASE 갯수
 
-            int R = in.nextInt();
-            String S = in.next();
+        for(int i=0 ;i<num;i++){
 
-            for(int j = 0; j < S.length(); j++) {
-                for(int k = 0; k < R; k++) {
+            int R =sc.nextInt();//R 번 반복
+            String S =sc.next();
+            for(int j=0; j<S.length();j++){
+                for(int k=0; k<R;k++){
                     System.out.print(S.charAt(j));
                 }
             }
 
-            System.out.println();
         }
+
+
+
     }
 }
 
