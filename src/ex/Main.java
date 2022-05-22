@@ -6,29 +6,35 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
+import java.io.*;
+import java.util.*;
+
 public class Main {
-    //백준 2562
+
+    static int[][] map;
+
     public static void main(String[] args) throws IOException {
-        Scanner sc= new Scanner(System.in);
+        // 변수 선언
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int n;
 
-        int N=9;
-        int []arr= new int[N];
+        // 입력
+        n = Integer.parseInt(br.readLine());
 
-        int cnt=0;
-        int max=arr[0];
-        for(int i=0; i<arr.length;i++){
-            arr[i]=sc.nextInt();
-        }
-
-        for(int i=1; i<arr.length ;i++){
-            if(max<arr[i]){
-              max =arr[i];
-              cnt=i;
+        map = new int[n][n];
+        for (int i=0; i<n; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            System.out.println(st.countTokens());
+            for (int j=0; j<n; j++){
+                map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
-        System.out.println(max);
-        System.out.println(cnt+1);
+        // 출력
+        bw.flush();
 
+        br.close();
+        bw.close();
     }
 }

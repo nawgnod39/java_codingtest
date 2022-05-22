@@ -1,0 +1,24 @@
+package ex;
+
+import java.util.Scanner;
+
+public class ex2941 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String[] str= {"c=","c-","dz=","d-","lj","s=","z="};
+        String st= sc.nextLine();
+
+        for(int i =0; i<str.length;i++){
+            if(st.contains(str[i]))
+                st=st.replace(str[i],"@");
+        }
+
+        System.out.println(st.length());
+
+
+
+
+
+    }
+}
